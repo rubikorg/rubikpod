@@ -1,9 +1,9 @@
 package main
 
 import (
+	r "github.com/rubikorg/rubik"
 	"rubikpod/cmd/server/app"
 	"rubikpod/cmd/server/routers"
-	r "github.com/rubikorg/rubik"
 )
 
 func main() {
@@ -16,9 +16,12 @@ func main() {
 
 	// TODO: set your one-time application level dependency here
 	// eg: DB Connection, Logger etc..
-	app.SetDep(app.Dependency{
+	err = app.SetDep(app.Dependency{
 		ProjectConfig: config,
 	})
+	if err != nil {
+		panic(err)
+	}
 
 	routers.Import()
 	panic(r.Run())

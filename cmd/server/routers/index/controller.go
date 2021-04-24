@@ -4,6 +4,6 @@ import (
 	r "github.com/rubikorg/rubik"
 )
 
-func indexCtl(req *r.Request) {
+func loginCtl(req *r.Request) {
 	req.Respond("Hello, world", r.Type.HTML)
 }

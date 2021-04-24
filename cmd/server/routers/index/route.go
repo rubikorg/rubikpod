@@ -7,11 +7,10 @@ import (
 // Router is index's router
 var Router = r.Create("/")
 
-var indexRoute = r.Route{
-	Path:       "/",
-	Controller: indexCtl,
-}
-
 func init() {
-	Router.Add(indexRoute)
+	loginRoute := r.Route{
+		Path:       "/login",
+		Controller: loginCtl,
+	}
+	Router.Add(loginRoute)
 }
